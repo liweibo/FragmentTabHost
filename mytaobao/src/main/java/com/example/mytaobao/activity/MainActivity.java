@@ -1,8 +1,7 @@
-package com.example.mytaobao;
+package com.example.mytaobao.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import com.example.mytaobao.R;
 import com.example.mytaobao.bean.Tab;
 import com.example.mytaobao.fragment.CartFragment;
 import com.example.mytaobao.fragment.CategoryFragment;
@@ -27,12 +27,15 @@ public class MainActivity extends AppCompatActivity {
     private List<Tab> mTabs = new ArrayList<>(5);
     private LayoutInflater mInflater;
 
+    private ArrayList<String> mCountries;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initTab();
     }
+
 
     private void initTab() {
 
@@ -80,5 +83,13 @@ public class MainActivity extends AppCompatActivity {
         text.setText(tab.getTitle());
 
         return  view;
+    }
+
+
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }
